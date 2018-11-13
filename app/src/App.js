@@ -3,10 +3,8 @@ import React from 'react';
 import { NFC } from 'nfc-pcsc';
 import fetch from 'node-fetch';
 
-import ReaderList from './ReaderList';
-import CardList from './CardList';
-
-import './index.scss';
+import ReaderList from './components/ReaderList';
+import CardList from './components/CardList';
 
 class App extends React.Component {
 
@@ -113,4 +111,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;

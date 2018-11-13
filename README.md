@@ -1,46 +1,70 @@
-# electron-webpack-quick-start
-> A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
+# electron-react-webpack
+Try this Electron & React 16 & Webpack 4 template for a quick development and prototyping.
 
-Thanks to the power of `electron-webpack` this template comes packed with...
+![w10 sample](https://user-images.githubusercontent.com/11739632/37350993-59ad48d4-26da-11e8-9ac5-d3539cf1e2f9.PNG)
 
-* Use of [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) for development
-* HMR for both `renderer` and `main` processes
-* Use of [`babel-preset-env`](https://github.com/babel/babel-preset-env) that is automatically configured based on your `electron` version
-* Use of [`electron-builder`](https://github.com/electron-userland/electron-builder) to package and build a distributable electron application
+## Install
+``` bash
+# Clone the repository
+$ git clone https://github.com/pastahito/electron-react-webpack
 
-Make sure to check out [`electron-webpack`'s documentation](https://webpack.electron.build/) for more details.
+# Go into the repository
+$ cd electron-react-webpack
 
-## Getting Started
-Simply clone down this reposity, install dependencies, and get started on your application.
-
-The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
-
-```bash
-# create a directory of your choice, and copy template using curl
-mkdir new-electron-webpack-project && cd new-electron-webpack-project
-curl -fsSL https://github.com/electron-userland/electron-webpack-quick-start/archive/master.tar.gz | tar -xz --strip-components 1
-
-# or copy template using git clone
-git clone https://github.com/electron-userland/electron-webpack-quick-start.git
-cd electron-webpack-quick-start
-rm -rf .git
-
-# install dependencies
-yarn
+# Install dependencies
+$ npm install
 ```
 
-### Development Scripts
-
-```bash
-# run application in development mode
-yarn dev
-
-# compile source code and create webpack output
-yarn compile
-
-# `yarn compile` & create build with electron-builder
-yarn dist
-
-# `yarn compile` & create unpacked build with electron-builder
-yarn dist:dir
+## Develop
+Just run this command to start developing with hot reloading.
+``` bash
+$ npm start
 ```
+
+## What's included
+- JSX support for React.
+- CSS modules support.
+- JS, CSS and assets automatic bundling.
+- Hot reloading via Webpack 4.
+
+
+## Folder structure
+```
+├── electron-react-webpack/             # Your project's name, you can rename it
+
+    ├── app/
+
+        ├── build/                      # Webpack 4 will manage this folder for you
+            ├── bundle.css              # Bundled CSS
+            ├── bundle.js               # Bundled JS
+            ├── ...                     # Your images will be copied here
+
+        ├── src/
+
+            ├── assets/                 # Images
+                ├── electron.png
+                ├── react.png
+                ├── webpack.png
+
+            ├── components/             # React Components
+                ├── Link/               # To keep them modularized follow this structure:
+                    ├── index.jsx       # Your component's React code
+                    ├── styles.css      # Your component's scoped CSS
+                ├── Logo/
+                    ├── index.jsx
+                    ├── styles.css
+
+            ├── App.jsx                 # React main component where everything is tied up
+            ├── renderer_process.js     # Electron's renderer-process, where you React app is called.
+            ├── global.css              # Global CSS and global constants go here
+
+        ├── index.html                  # This HTML only uses build/ folder's files
+
+    ├── main_process.js                 # Electron's main process. Whole app is launched from here
+    ├── package.json
+    ├── webpack.config.js               # Webpack 4 setup
+```
+
+## Related
+- [electron-vue-webpack](https://github.com/pastahito/electron-vue-webpack) -
+Minimal Electron template using Vue 2 instead of React.
