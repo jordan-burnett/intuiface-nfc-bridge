@@ -1,0 +1,36 @@
+{
+  "name": "intuiface-nfc-bridge",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "rebuild": "electron-rebuild",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.4.0",
+    "@material-ui/icons": "^3.0.1",
+    "nfc-pcsc": "^0.6.2",
+    "node-fetch": "^2.3.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "source-map-support": "^0.5.9"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "electron": "3.0.7",
+    "electron-builder": "^20.31.2",
+    "electron-rebuild": "^1.8.2",
+    "electron-webpack": "^2.4.0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.24.0"
+  },
+  "build": {
+    "appId": "uk.co.jordanburnett.nfc",
+    "productName": "Intuiface NFC Bridge"
+  }
+}
